@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { TypeWriter } from '@/components/ui/TypeWriter'
+import { HeroCodeBlock } from '@/components/ui/HeroCodeBlock'
 import { site } from '@/data/site'
 import profileImg from '@/assets/profile.jpg'
 
@@ -15,18 +16,13 @@ export function Hero() {
   const [xy, setXy] = useState({ x: 0, y: 0 })
   const areaRef = useRef<HTMLDivElement>(null)
 
-  const onMouseMove = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (!areaRef.current) return
-      const rect = areaRef.current.getBoundingClientRect()
-      const cx = rect.left + rect.width / 2
-      const cy = rect.top + rect.height / 2
-      const x = (e.clientX - cx) / 40
-      const y = (e.clientY - cy) / 40
-      setXy({ x, y })
-    },
-    []
-  )
+  const onMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (!areaRef.current) return
+    const rect = areaRef.current.getBoundingClientRect()
+    const cx = rect.left + rect.width / 2
+    const cy = rect.top + rect.height / 2
+    setXy({ x: (e.clientX - cx) / 40, y: (e.clientY - cy) / 40 })
+  }, [])
   const onMouseLeave = useCallback(() => setXy({ x: 0, y: 0 }), [])
 
   return (
@@ -37,6 +33,16 @@ export function Hero() {
       onMouseLeave={onMouseLeave}
       className="relative flex min-h-screen flex-col justify-center overflow-hidden px-4 pt-20 md:flex-row md:items-center md:gap-12 md:px-6 lg:gap-20"
     >
+      {/* Background: code block (run + result), behind all hero content */}
+      <div
+        className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center"
+        aria-hidden
+      >
+        <div className="scale-[1.2] opacity-[0.38]">
+          <HeroCodeBlock isBackground />
+        </div>
+      </div>
+
       {/* Left: copy + CTAs */}
       <div className="relative z-10 max-w-xl">
         <motion.span
@@ -84,57 +90,38 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Right: profile + glow + particles + floating tech */}
+      {/* Right: profile (original position) */}
       <motion.div
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="relative mt-14 flex justify-center md:mt-0 md:flex-1"
+        className="relative z-10 mt-14 flex justify-center md:mt-0 md:flex-1"
       >
         <div className="relative">
-          {/* Neon glow */}
           <div
             className="absolute -inset-1 rounded-[2.25rem] opacity-60 blur-2xl"
             style={{
               background: `linear-gradient(135deg, var(--primary) 0%, var(--accent) 50%, var(--highlight) 100%)`,
             }}
           />
-          {/* Profile image with parallax */}
           <motion.div
             style={{ x: xy.x, y: xy.y }}
             transition={{ type: 'spring', stiffness: 80, damping: 20 }}
             className="relative overflow-hidden rounded-[2rem] border border-white/10"
           >
-            <img
-              src={profileImg}
-              alt=""
-              className="h-64 w-64 object-cover md:h-80 md:w-80"
-            />
+            <img src={profileImg} alt="" className="h-64 w-64 object-cover md:h-80 md:w-80" />
           </motion.div>
-          {/* Floating particles (dots) */}
           {[0, 1, 2, 3, 4].map((i) => (
             <motion.span
               key={i}
-              animate={{
-                y: [0, -8, 0],
-                opacity: [0.4, 0.8, 0.4],
-              }}
-              transition={{
-                duration: 3 + i * 0.5,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
+              animate={{ y: [0, -8, 0], opacity: [0.4, 0.8, 0.4] }}
+              transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: 'easeInOut' }}
               className="absolute h-1.5 w-1.5 rounded-full bg-[var(--accent)]"
-              style={{
-                left: `${20 + i * 15}%`,
-                top: `${10 + (i % 3) * 30}%`,
-              }}
+              style={{ left: `${20 + i * 15}%`, top: `${10 + (i % 3) * 30}%` }}
               aria-hidden
             />
           ))}
         </div>
-
-        {/* Floating tech icons around profile */}
         <div className="pointer-events-none absolute inset-0 hidden md:block">
           {floatingTech.map((t, i) => {
             const angle = (i / floatingTech.length) * 360 * (Math.PI / 180)
