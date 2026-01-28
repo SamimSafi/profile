@@ -33,17 +33,17 @@ export function Hero() {
       onMouseLeave={onMouseLeave}
       className="relative flex min-h-screen flex-col justify-center overflow-hidden px-4 pt-20 md:flex-row md:items-center md:gap-12 md:px-6 lg:gap-20"
     >
-      {/* Background: code block (run + result), behind all hero content */}
+      {/* Background: code block, behind everything */}
       <div
         className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center"
         aria-hidden
       >
-        <div className="scale-[1.2] opacity-[0.38]">
+        <div className="scale-[1.55] opacity-[0.5] md:scale-[2.05]">
           <HeroCodeBlock isBackground />
         </div>
       </div>
 
-      {/* Left: copy + CTAs */}
+      {/* Left: badge, name, typewriter, CTAs */}
       <div className="relative z-10 max-w-xl">
         <motion.span
           initial={{ opacity: 0, y: 10 }}
@@ -90,7 +90,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Right: profile (original position) */}
+      {/* Right: profile */}
       <motion.div
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}

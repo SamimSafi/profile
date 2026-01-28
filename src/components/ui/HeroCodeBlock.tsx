@@ -23,11 +23,13 @@ function CodeLine({
   running,
   visible,
   onRun,
+  large,
 }: {
   line: (typeof LINES)[0]
   running: Run
   visible: boolean
   onRun: (fn: 'build_dashboard' | 'fetch_surveys') => void
+  large?: boolean
 }) {
   if (!line.raw) {
     return <div className="h-4" />
@@ -77,7 +79,9 @@ function CodeLine({
       initial={{ opacity: 0, x: -8 }}
       animate={{ opacity: visible ? 1 : 0, x: visible ? 0 : -8 }}
       transition={{ duration: 0.3 }}
-      className={`flex items-center font-mono text-[13px] leading-relaxed ${
+      className={`flex items-center font-mono leading-relaxed ${
+        large ? 'text-[15px]' : 'text-[13px]'
+      } ${
         isRunning ? 'rounded-r border-l-2 border-[var(--accent)] bg-white/[0.04] pl-2' : 'pl-2'
       } ${isClickable ? 'cursor-pointer' : ''}`}
       onClick={() => isClickable && onRun(line.fn!)}
@@ -160,11 +164,13 @@ export function HeroCodeBlock({ isBackground }: HeroCodeBlockProps) {
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.15 }}
-      className="w-full max-w-[360px] overflow-hidden rounded-xl border border-white/10 shadow-2xl"
+      className={`w-full overflow-hidden rounded-xl border border-white/10 shadow-2xl ${
+        isBackground ? 'max-w-[min(500px,90vw)]' : 'max-w-[360px]'
+      }`}
       style={{ background: EDITOR_BG }}
     >
       {/* macOS window dots */}
-      <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-3">
+      <div className={`flex items-center gap-1.5 border-b border-white/10 px-4 ${isBackground ? 'py-3.5' : 'py-3'}`}>
         <span className="h-2.5 w-2.5 rounded-full" style={{ background: DOT_RED }} />
         <span className="h-2.5 w-2.5 rounded-full" style={{ background: DOT_ORANGE }} />
         <span className="h-2.5 w-2.5 rounded-full" style={{ background: DOT_GREEN }} />
@@ -172,7 +178,7 @@ export function HeroCodeBlock({ isBackground }: HeroCodeBlockProps) {
 
       <div className="flex flex-col md:flex-row">
         {/* Code */}
-        <div className="flex-1 p-4">
+        <div className={`flex-1 ${isBackground ? 'p-5' : 'p-4'}`}>
           {LINES.map((line) => (
             <CodeLine
               key={line.id}
@@ -180,6 +186,7 @@ export function HeroCodeBlock({ isBackground }: HeroCodeBlockProps) {
               running={running}
               visible={visibleLines > LINES.indexOf(line)}
               onRun={run}
+              large={isBackground}
             />
           ))}
           {!isBackground && (
@@ -191,10 +198,10 @@ export function HeroCodeBlock({ isBackground }: HeroCodeBlockProps) {
 
         {/* Result panel */}
         <div
-          className="flex min-h-[100px] flex-col border-t border-white/10 p-4 md:border-l md:border-t-0"
+          className={`flex flex-col border-t border-white/10 p-4 md:border-l md:border-t-0 ${isBackground ? 'min-h-[120px]' : 'min-h-[100px]'}`}
           style={{ background: 'rgba(0,0,0,0.2)' }}
         >
-          <div className="mb-2 font-mono text-[11px] uppercase tracking-wider text-[var(--text-muted)]">
+          <div className={`mb-2 font-mono uppercase tracking-wider text-[var(--text-muted)] ${isBackground ? 'text-[12px]' : 'text-[11px]'}`}>
             Result
           </div>
           <AnimatePresence mode="wait">
