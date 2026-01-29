@@ -8,7 +8,7 @@ import './styles/globals.css'
 // Vite's BASE_URL matches the `base` in vite.config ('' for /, or e.g. '/profile/' for GH Pages).
 // React Router basename must have a leading slash and no trailing slash.
 const base = import.meta.env.BASE_URL
-const basename = base === '/' ? '/' : base.replace(/\/$/, '')
+const basename = base === '/' || base === './' ? '/' : base.replace(/\/$/, '')
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
