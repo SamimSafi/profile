@@ -36,8 +36,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
         <a href="#home" className="flex items-center gap-2 font-heading text-lg font-semibold text-[var(--text)]">
-          <img src={logo} alt="Logo" className="h-8 w-8 rounded-full object-cover" />
-          <span>{site.name}</span>
+          <img src={logo} alt="Samim Safi" className="h-16 w-auto object-contain" />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
