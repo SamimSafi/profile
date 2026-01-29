@@ -22,6 +22,8 @@ function ImageGallery({ images, title }: { images: string[], title: string }) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
           className="h-full w-full object-cover object-top"
+          loading="lazy"
+          decoding="async"
         />
       </AnimatePresence>
 
@@ -91,6 +93,8 @@ export function Projects() {
                           src={p.image}
                           alt=""
                           className="h-full w-full object-cover object-top"
+                          loading="lazy"
+                          decoding="async"
                         />
                       ) : (
                         <div

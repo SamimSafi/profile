@@ -30,6 +30,8 @@ export function SkillIcon({ name, size = 32, className = '' }: { name: string } 
         width={size} 
         height={size} 
         className={`object-contain transition-transform group-hover:scale-110 ${className}`} 
+        loading="lazy"
+        decoding="async"
         onError={(e) => {
           // If image fails to load, hide it
           e.currentTarget.style.display = 'none'
