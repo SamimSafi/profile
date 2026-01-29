@@ -13,12 +13,17 @@ export function Section({ id, title, children, className = '' }: SectionProps) {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id={id} ref={ref} className={`relative border-t border-white/[0.06] py-16 md:py-24 ${className}`}>
+    <section
+      id={id}
+      ref={ref}
+      className={`relative border-t border-white/[0.06] py-16 md:py-24 ${className}`}
+    >
       {/* Optional gradient divider */}
       <div
         className="absolute left-0 right-0 top-0 h-px opacity-60"
         style={{
-          background: 'linear-gradient(90deg, transparent, var(--primary), var(--accent), transparent)',
+          background:
+            'linear-gradient(90deg, transparent, var(--primary), var(--accent), transparent)',
         }}
         aria-hidden
       />

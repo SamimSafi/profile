@@ -16,10 +16,7 @@ export function About() {
         <div className="grid gap-12 lg:grid-cols-[1fr,auto]">
           <div>
             {about.intro.map((p, i) => (
-              <p
-                key={i}
-                className="text-[var(--text-muted)] [&+&]:mt-4"
-              >
+              <p key={i} className="text-[var(--text-muted)] [&+&]:mt-4">
                 {p}
               </p>
             ))}
@@ -32,9 +29,7 @@ export function About() {
                 <div className="space-y-4">
                   {about.education.map((e) => (
                     <div key={e.degree}>
-                      <div className="text-sm font-medium text-[var(--text)]">
-                        {e.degree}
-                      </div>
+                      <div className="text-sm font-medium text-[var(--text)]">{e.degree}</div>
                       <div className="text-xs text-[var(--text-muted)]">
                         {e.school} • {e.year}
                       </div>
@@ -55,11 +50,7 @@ export function About() {
                 }}
               />
               <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl">
-                <img 
-                  src={profileImg} 
-                  alt="" 
-                  className="h-64 w-64 object-cover sm:h-72 sm:w-72" 
-                />
+                <img src={profileImg} alt="" className="h-64 w-64 object-cover sm:h-72 sm:w-72" />
               </div>
             </div>
           </div>
@@ -67,18 +58,20 @@ export function About() {
 
         {/* Tech stack at the end */}
         <div className="mt-12 flex flex-wrap gap-2 border-t border-white/5 pt-8">
-          {about.techStack.filter(t => !['React', 'TypeScript'].includes(t)).map((t, i) => (
-            <motion.span
-              key={t}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.25, delay: i * 0.03 }}
-              className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-[var(--text)]"
-            >
-              {t}
-            </motion.span>
-          ))}
+          {about.techStack
+            .filter((t) => !['React', 'TypeScript'].includes(t))
+            .map((t, i) => (
+              <motion.span
+                key={t}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.25, delay: i * 0.03 }}
+                className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-[var(--text)]"
+              >
+                {t}
+              </motion.span>
+            ))}
         </div>
       </motion.div>
     </Section>

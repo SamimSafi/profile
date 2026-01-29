@@ -1,10 +1,15 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { IconExternalLink, IconGithub, IconChevronLeft, IconChevronRight } from '@/components/ui/Icons'
+import {
+  IconExternalLink,
+  IconGithub,
+  IconChevronLeft,
+  IconChevronRight,
+} from '@/components/ui/Icons'
 import { Section } from '@/components/animation/Section'
 import { projects } from '@/data/projects'
 
-function ImageGallery({ images, title }: { images: string[], title: string }) {
+function ImageGallery({ images, title }: { images: string[]; title: string }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const next = () => setCurrentIndex((prev) => (prev + 1) % images.length)
@@ -43,7 +48,7 @@ function ImageGallery({ images, title }: { images: string[], title: string }) {
           >
             <IconChevronRight size={20} />
           </button>
-          
+
           <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-1.5">
             {images.map((_, i) => (
               <button
@@ -107,7 +112,7 @@ export function Projects() {
                       )}
                     </div>
                   )}
-                  
+
                   <div className="absolute bottom-3 right-3 z-20 flex flex-wrap justify-end gap-2">
                     {p.tech.slice(0, 4).map((t) => (
                       <span
@@ -132,10 +137,7 @@ export function Projects() {
                 {p.stats && p.stats.length > 0 && (
                   <div className="mt-4 flex flex-wrap gap-4">
                     {p.stats.map((s) => (
-                      <span
-                        key={s.label}
-                        className="text-sm text-[var(--text-muted)]"
-                      >
+                      <span key={s.label} className="text-sm text-[var(--text-muted)]">
                         <span className="font-semibold text-[var(--text)]">{s.value}</span>{' '}
                         {s.label}
                       </span>

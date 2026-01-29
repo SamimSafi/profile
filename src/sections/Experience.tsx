@@ -37,11 +37,9 @@ export function Experience() {
                   <span className="mb-3 inline-block text-xs font-bold uppercase tracking-widest text-[var(--accent)]">
                     {e.year}
                   </span>
-                  
-                  <h3 className="font-heading text-xl font-bold text-[var(--text)]">
-                    {e.role}
-                  </h3>
-                  
+
+                  <h3 className="font-heading text-xl font-bold text-[var(--text)]">{e.role}</h3>
+
                   <div className="mt-1 flex flex-wrap items-center gap-2 text-sm">
                     <span className="font-medium text-[var(--primary)]">{e.company}</span>
                     <span className="text-[var(--text-muted)]">•</span>
@@ -56,7 +54,10 @@ export function Experience() {
 
                   <ul className="mt-6 space-y-3">
                     {e.responsibilities.map((resp, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-sm text-[var(--text-muted)]">
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3 text-sm text-[var(--text-muted)]"
+                      >
                         <IconCheck className="mt-1 shrink-0 text-[var(--primary)]" size={14} />
                         <span>{resp}</span>
                       </li>

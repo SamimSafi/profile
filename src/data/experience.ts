@@ -32,7 +32,8 @@ export const experience: Experience[] = [
     role: 'Web Application Developer',
     company: 'Ghalib University',
     location: 'Kabul, Afghanistan',
-    description: 'Ghalib University is a leading Private Higher Education Institute known for academic excellence.',
+    description:
+      'Ghalib University is a leading Private Higher Education Institute known for academic excellence.',
     responsibilities: [
       'Development of Databases for University',
       'Development of web site',
@@ -40,7 +41,7 @@ export const experience: Experience[] = [
       'Training of database to employees and teachers',
       'Adhoc Report Sql server',
       'Development of Complete HRMIS System',
-      'Development of Student portal in React JS',
+      'Development of Student portal in React',
     ],
   },
   {
@@ -77,7 +78,8 @@ export const experience: Experience[] = [
     role: 'Full Stack Developer (Freelance)',
     company: 'Self-Employed / Contracted Projects',
     location: 'Remote / Kabul, Afghanistan',
-    description: 'Providing end-to-end software solutions for various business sectors through contracted projects.',
+    description:
+      'Providing end-to-end software solutions for various business sectors through contracted projects.',
     responsibilities: [
       'Development of Tailor Management Systems for local businesses',
       'Design and development of custom professional websites',

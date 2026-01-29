@@ -2,12 +2,7 @@ import { motion } from 'framer-motion'
 import { Section } from '@/components/animation/Section'
 import { skillGroups, techSkills } from '@/data/skills'
 import { SkillIcon } from '@/components/ui/SkillIcon'
-import {
-  IconServer,
-  IconLayout,
-  IconPackage,
-  IconTool,
-} from '@/components/ui/Icons'
+import { IconServer, IconLayout, IconPackage, IconTool } from '@/components/ui/Icons'
 
 const iconMap: Record<string, React.ReactNode> = {
   FiServer: <IconServer size={22} className="text-[var(--accent)]" />,
@@ -26,27 +21,27 @@ export function Skills() {
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ 
+              transition={{
                 type: 'spring',
                 stiffness: 260,
                 damping: 20,
-                delay: i * 0.05 
+                delay: i * 0.05,
               }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
                 y: -5,
-                transition: { duration: 0.2 } 
+                transition: { duration: 0.2 },
               }}
               className="group relative flex flex-col items-center"
             >
               {/* Tile Container - Matching image style */}
               <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl border border-white/10 bg-[#161b22] p-4 shadow-2xl transition-all group-hover:border-[var(--primary)]/50 group-hover:bg-[#1c2128] md:h-24 md:w-24">
-                <SkillIcon 
-                  name={skill.name} 
-                  className="h-10 w-10 transition-transform group-hover:scale-110 md:h-12 md:w-12" 
-                  size={48} 
+                <SkillIcon
+                  name={skill.name}
+                  className="h-10 w-10 transition-transform group-hover:scale-110 md:h-12 md:w-12"
+                  size={48}
                 />
-                
+
                 {/* Subtle Inner Glow */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
@@ -83,9 +78,7 @@ export function Skills() {
                 <h3 className="font-heading text-lg font-bold text-[var(--text)]">
                   {group.category}
                 </h3>
-                <p className="text-xs text-[var(--text-muted)]">
-                  {group.description}
-                </p>
+                <p className="text-xs text-[var(--text-muted)]">{group.description}</p>
               </div>
             </div>
 
@@ -101,7 +94,7 @@ export function Skills() {
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
                       viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.2 + skillIdx * 0.05, ease: "easeOut" }}
+                      transition={{ duration: 1, delay: 0.2 + skillIdx * 0.05, ease: 'easeOut' }}
                       className="h-full rounded-full bg-gradient-to-r from-[var(--primary)] to-[var(--accent)]"
                     />
                   </div>

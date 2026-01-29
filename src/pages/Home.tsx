@@ -1,7 +1,7 @@
 import { Navbar } from '@/components/layout/Navbar'
 import { Background } from '@/components/layout/Background'
 import { ScrollProgress } from '@/components/ui/ScrollProgress'
-import { Hero, About, Skills, Projects, Contact, Experience } from '@/sections'
+import { Hero, About, Skills, Projects, Contact, Experience, Showcase } from '@/sections'
 
 export default function Home() {
   return (
@@ -12,6 +12,7 @@ export default function Home() {
         <Hero />
         <Skills />
         <Projects />
+        <Showcase />
         <Experience />
         <About />
         <Contact />

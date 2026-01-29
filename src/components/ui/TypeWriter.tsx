@@ -7,7 +7,12 @@ type TypeWriterProps = {
   cursorClassName?: string
 }
 
-export function TypeWriter({ text, className = '', speed = 40, cursorClassName = 'typing-cursor' }: TypeWriterProps) {
+export function TypeWriter({
+  text,
+  className = '',
+  speed = 40,
+  cursorClassName = 'typing-cursor',
+}: TypeWriterProps) {
   const [display, setDisplay] = useState('')
   const [done, setDone] = useState(false)
 

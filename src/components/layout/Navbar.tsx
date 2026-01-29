@@ -7,6 +7,7 @@ const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
+  { href: '#showcase', label: 'Showcase' },
   { href: '#experience', label: 'Experience' },
   { href: '#about', label: 'About' },
   { href: '#contact', label: 'Contact' },
@@ -34,7 +35,10 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
-        <a href="#home" className="flex items-center gap-2 font-heading text-lg font-semibold text-[var(--text)]">
+        <a
+          href="#home"
+          className="flex items-center gap-2 font-heading text-lg font-semibold text-[var(--text)]"
+        >
           <img src={logo} alt="Samim Safi" className="h-16 w-auto object-contain" />
         </a>
 

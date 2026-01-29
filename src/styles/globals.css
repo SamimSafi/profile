@@ -51,7 +51,8 @@ body {
 /* Gradient border (optional) */
 .gradient-border {
   position: relative;
-  background: linear-gradient(var(--bg), var(--bg)) padding-box,
+  background:
+    linear-gradient(var(--bg), var(--bg)) padding-box,
     linear-gradient(135deg, var(--primary), var(--accent), var(--highlight)) border-box;
   border: 1px solid transparent;
 }
@@ -78,7 +79,9 @@ body {
 
 /* Typing cursor */
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 .typing-cursor::after {
   content: '|';
@@ -88,7 +91,9 @@ body {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

@@ -14,9 +14,7 @@ export function Contact() {
   return (
     <Section id="contact" title="Contact">
       <div className="mx-auto max-w-2xl text-center">
-        <p className="mb-8 text-lg text-[var(--text-muted)]">
-          Let's work together.
-        </p>
+        <p className="mb-8 text-lg text-[var(--text-muted)]">Let's work together.</p>
         <div className="mb-10 flex flex-wrap justify-center gap-4">
           {contactItems.map((c) => (
             <motion.a

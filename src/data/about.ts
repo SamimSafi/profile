@@ -1,7 +1,7 @@
 export const about = {
   intro: [
     'I am a Senior Software & MIS Developer with over 9 years of experience in designing and implementing complex systems, including ERPs, Financial Systems, and HRMIS.',
-    'I specialize in building scalable web applications and MIS solutions using React, TypeScript, .NET Core, and SQL Server, with a focus on system architecture and security.',
+    'I specialize in building scalable web applications and MIS solutions using React, TypeScript, .NET 8, and SQL Server, with a focus on system architecture and security.',
   ],
   education: [
     {
@@ -18,7 +18,7 @@ export const about = {
   techStack: [
     'React',
     'TypeScript',
-    '.NET Core',
+    '.NET 8',
     'SQL Server',
     'Python',
     'PHP',

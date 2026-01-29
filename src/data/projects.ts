@@ -27,7 +27,8 @@ export const projects: Project[] = [
   {
     id: 'meal-monitoring',
     title: 'MEAL Monitoring System',
-    description: 'Real-time survey monitoring platform for field data collection and impact tracking.',
+    description:
+      'Real-time survey monitoring platform for field data collection and impact tracking.',
     impact: 'Enabled real-time oversight of 50+ field surveys and faster reporting cycles.',
     features: ['Kobo Integration', 'Real-time dashboards', 'GPS Mapping', 'Role-based access'],
     tech: ['FastAPI', 'React', 'Kobo', 'ApexCharts'],
@@ -42,7 +43,8 @@ export const projects: Project[] = [
   {
     id: 'npfx-market',
     title: 'NPFX Market Financial System',
-    description: 'A comprehensive financial market system with real-time trading entries and account management.',
+    description:
+      'A comprehensive financial market system with real-time trading entries and account management.',
     impact: 'Streamlined financial operations and automated trading workflows with high precision.',
     features: [
       'Employee registration',
@@ -50,7 +52,7 @@ export const projects: Project[] = [
       'Trading entries',
       '2-step verification',
     ],
-    tech: ['React', 'TypeScript', '.NET Framework 8', 'SQL Server'],
+    tech: ['React', 'TypeScript', '.NET 8', 'SQL Server'],
     link: 'https://npfx-market.com',
     stats: [
       { label: 'Technology', value: '.NET 8' },
@@ -60,8 +62,10 @@ export const projects: Project[] = [
   {
     id: 'hrpmis',
     title: 'HRPMIS',
-    description: 'Human Resources & Plan Management Information System for comprehensive employee lifecycle management.',
-    impact: 'Digitized HR processes for large organizations, including biometric attendance and plan management.',
+    description:
+      'Human Resources & Plan Management Information System for comprehensive employee lifecycle management.',
+    impact:
+      'Digitized HR processes for large organizations, including biometric attendance and plan management.',
     features: [
       'Employee Contract Management',
       'Biometric Attendance',
@@ -77,7 +81,8 @@ export const projects: Project[] = [
   {
     id: 'oii-smart-system',
     title: 'OII Smart System',
-    description: 'Document Management System with tracking, localization, and automated translation support.',
+    description:
+      'Document Management System with tracking, localization, and automated translation support.',
     impact: 'Improved document tracking and customer information management efficiency.',
     features: [
       'Document Tracking',
@@ -102,14 +107,16 @@ export const projects: Project[] = [
   {
     id: 'saadat-clinic',
     title: 'Saadat Dental Clinic Software',
-    description: 'Management software for dental clinics covering patient records and treatment history.',
+    description:
+      'Management software for dental clinics covering patient records and treatment history.',
     features: ['Patient Registration', 'Treatment Assign', 'Laboratory Management'],
     tech: ['C#', 'SQL Server'],
   },
   {
     id: 'tailor-system',
     title: 'Tailor Management System',
-    description: 'Specific ERP for tailoring businesses with measurement tracking and order management.',
+    description:
+      'Specific ERP for tailoring businesses with measurement tracking and order management.',
     features: ['Measurement Registration', 'Automatic Print Slip', 'Order Tracking'],
     tech: ['C#', 'SQL Server'],
     images: [tailor1, tailor2, tailor3, tailor4],

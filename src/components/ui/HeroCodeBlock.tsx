@@ -42,7 +42,8 @@ function CodeLine({
     if (line.raw.startsWith('def ')) {
       return (
         <>
-          <span style={{ color: KEYWORD }}>def</span> <span style={{ color: TEXT }}>build_dashboard</span>
+          <span style={{ color: KEYWORD }}>def</span>{' '}
+          <span style={{ color: TEXT }}>build_dashboard</span>
           <span style={{ color: TEXT }}>(data):</span>
         </>
       )
@@ -50,7 +51,8 @@ function CodeLine({
     if (line.raw.includes('return ApexCharts')) {
       return (
         <>
-          <span style={{ color: KEYWORD }}>return</span> <span style={{ color: TEXT }}>ApexCharts</span>
+          <span style={{ color: KEYWORD }}>return</span>{' '}
+          <span style={{ color: TEXT }}>ApexCharts</span>
           <span style={{ color: TEXT }}>.render(data)</span>
         </>
       )
@@ -58,7 +60,8 @@ function CodeLine({
     if (line.raw.startsWith('async ')) {
       return (
         <>
-          <span style={{ color: KEYWORD }}>async</span> <span style={{ color: TEXT }}>fetch_surveys</span>
+          <span style={{ color: KEYWORD }}>async</span>{' '}
+          <span style={{ color: TEXT }}>fetch_surveys</span>
           <span style={{ color: TEXT }}>():</span>
         </>
       )
@@ -170,7 +173,9 @@ export function HeroCodeBlock({ isBackground }: HeroCodeBlockProps) {
       style={{ background: EDITOR_BG }}
     >
       {/* macOS window dots */}
-      <div className={`flex items-center gap-1.5 border-b border-white/10 px-4 ${isBackground ? 'py-3.5' : 'py-3'}`}>
+      <div
+        className={`flex items-center gap-1.5 border-b border-white/10 px-4 ${isBackground ? 'py-3.5' : 'py-3'}`}
+      >
         <span className="h-2.5 w-2.5 rounded-full" style={{ background: DOT_RED }} />
         <span className="h-2.5 w-2.5 rounded-full" style={{ background: DOT_ORANGE }} />
         <span className="h-2.5 w-2.5 rounded-full" style={{ background: DOT_GREEN }} />
@@ -201,7 +206,9 @@ export function HeroCodeBlock({ isBackground }: HeroCodeBlockProps) {
           className={`flex flex-col border-t border-white/10 p-4 md:border-l md:border-t-0 ${isBackground ? 'min-h-[120px]' : 'min-h-[100px]'}`}
           style={{ background: 'rgba(0,0,0,0.2)' }}
         >
-          <div className={`mb-2 font-mono uppercase tracking-wider text-[var(--text-muted)] ${isBackground ? 'text-[12px]' : 'text-[11px]'}`}>
+          <div
+            className={`mb-2 font-mono uppercase tracking-wider text-[var(--text-muted)] ${isBackground ? 'text-[12px]' : 'text-[11px]'}`}
+          >
             Result
           </div>
           <AnimatePresence mode="wait">
