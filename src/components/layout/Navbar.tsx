@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { IconMenu, IconX } from '@/components/ui/Icons'
-import { site } from '@/data/site'
 import logo from '@/assets/samimsafi.png'
 
 const navLinks = [
