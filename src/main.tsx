@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App'
+import { ThemeProvider } from './hooks/useTheme'
 import './styles/globals.css'
 
 // Vite's BASE_URL matches the `base` in vite.config ('' for /, or e.g. '/profile/' for GH Pages).
@@ -12,7 +13,9 @@ const basename = base === '/' ? '/' : base.replace(/\/$/, '')
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter basename={basename}>
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </BrowserRouter>
   </StrictMode>
 )

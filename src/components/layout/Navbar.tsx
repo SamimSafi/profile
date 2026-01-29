@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { IconMenu, IconX } from '@/components/ui/Icons'
+import { ThemeToggle } from '../ThemeToggle'
 import logo from '@/assets/samimsafi.png'
 
 const navLinks = [
@@ -30,7 +31,7 @@ export function Navbar() {
       transition={{ duration: 0.4 }}
       className={`fixed left-0 right-0 top-0 z-50 border-b transition-all duration-300 ${
         scrolled
-          ? 'border-white/[0.08] bg-[rgba(11,15,26,0.8)] backdrop-blur-xl'
+          ? 'border-[var(--glass-border)] bg-[var(--bg)]/80 backdrop-blur-xl'
           : 'border-transparent bg-transparent'
       }`}
     >
@@ -52,16 +53,20 @@ export function Navbar() {
               {label}
             </a>
           ))}
+          <ThemeToggle />
         </nav>
 
-        <button
-          type="button"
-          onClick={() => setOpen((o) => !o)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg text-[var(--text)] md:hidden"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-        >
-          {open ? <IconX size={24} /> : <IconMenu size={24} />}
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setOpen((o) => !o)}
+            className="flex h-10 w-10 items-center justify-center rounded-lg text-[var(--text)]"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+          >
+            {open ? <IconX size={24} /> : <IconMenu size={24} />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>

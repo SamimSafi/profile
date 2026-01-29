@@ -16,7 +16,7 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
   const prev = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
 
   return (
-    <div className="group/gallery relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-[#161b22]">
+    <div className="group/gallery relative aspect-video w-full overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-[var(--bg-end)]">
       <AnimatePresence mode="wait">
         <motion.img
           key={currentIndex}
@@ -36,14 +36,14 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
         <>
           <button
             onClick={prev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white opacity-0 blur-sm transition-all group-hover/gallery:opacity-100 group-hover/gallery:blur-0 hover:bg-black/70"
+            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-[var(--bg)]/50 p-2 text-[var(--text)] opacity-0 blur-sm transition-all group-hover/gallery:opacity-100 group-hover/gallery:blur-0 hover:bg-[var(--bg)]/70"
             aria-label="Previous image"
           >
             <IconChevronLeft size={20} />
           </button>
           <button
             onClick={next}
-            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-black/50 p-2 text-white opacity-0 blur-sm transition-all group-hover/gallery:opacity-100 group-hover/gallery:blur-0 hover:bg-black/70"
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-[var(--bg)]/50 p-2 text-[var(--text)] opacity-0 blur-sm transition-all group-hover/gallery:opacity-100 group-hover/gallery:blur-0 hover:bg-[var(--bg)]/70"
             aria-label="Next image"
           >
             <IconChevronRight size={20} />
@@ -55,7 +55,7 @@ function ImageGallery({ images, title }: { images: string[]; title: string }) {
                 key={i}
                 onClick={() => setCurrentIndex(i)}
                 className={`h-1.5 rounded-full transition-all ${
-                  i === currentIndex ? 'w-4 bg-[var(--primary)]' : 'w-1.5 bg-white/30'
+                  i === currentIndex ? 'w-4 bg-[var(--primary)]' : 'w-1.5 bg-[var(--text)]/30'
                 }`}
                 aria-label={`Go to image ${i + 1}`}
               />
@@ -92,7 +92,7 @@ export function Projects() {
                   {p.images && p.images.length > 0 ? (
                     <ImageGallery images={p.images} title={p.title} />
                   ) : (
-                    <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[var(--primary)]/15 via-[var(--bg)] to-[var(--accent)]/10">
+                    <div className="relative aspect-video overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-gradient-to-br from-[var(--primary)]/15 via-[var(--bg)] to-[var(--accent)]/10">
                       {p.image ? (
                         <img
                           src={p.image}
@@ -105,8 +105,8 @@ export function Projects() {
                         <div
                           className="absolute inset-0 opacity-40"
                           style={{
-                            background: `radial-gradient(circle at 30% 30%, rgba(99,102,241,0.25) 0%, transparent 50%),
-                              radial-gradient(circle at 70% 70%, rgba(34,211,238,0.15) 0%, transparent 50%)`,
+                            background: `radial-gradient(circle at 30% 30%, var(--primary) 0%, transparent 50%),
+                              radial-gradient(circle at 70% 70%, var(--accent) 0%, transparent 50%)`,
                           }}
                         />
                       )}
@@ -117,7 +117,7 @@ export function Projects() {
                     {p.tech.slice(0, 4).map((t) => (
                       <span
                         key={t}
-                        className="rounded-md border border-white/10 bg-black/60 backdrop-blur-md px-2.5 py-1 text-xs text-[var(--text)]"
+                        className="rounded-md border border-[var(--glass-border)] bg-[var(--bg)]/60 backdrop-blur-md px-2.5 py-1 text-xs text-[var(--text)]"
                       >
                         {t}
                       </span>
@@ -172,7 +172,7 @@ export function Projects() {
                       href={p.repo}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-5 py-2.5 text-sm text-[var(--text-muted)] transition hover:border-white/20 hover:text-[var(--text)]"
+                      className="inline-flex items-center gap-2 rounded-lg border border-[var(--glass-border)] px-5 py-2.5 text-sm text-[var(--text-muted)] transition hover:border-[var(--text-muted)]/40 hover:text-[var(--text)]"
                     >
                       <IconGithub size={14} />
                       GitHub

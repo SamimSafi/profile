@@ -4,6 +4,25 @@
 
 /* Dark futuristic UI – #0b0f1a → #0f172a, glassmorphism, indigo/cyan */
 :root {
+  /* Light mode variables */
+  --bg: #f8fafc;
+  --bg-end: #f1f5f9;
+  --card: rgba(0, 0, 0, 0.04);
+  --primary: #4f46e5;
+  --accent: #0891b2;
+  --highlight: #9333ea;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --scrollbar-thumb: #cbd5e1;
+  --scrollbar-track: #f1f5f9;
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --editor-bg: #ffffff;
+  --hero-vignette: rgba(255, 255, 255, 0.6);
+}
+
+.dark {
+  /* Dark futuristic UI – #0b0f1a → #0f172a, glassmorphism, indigo/cyan */
   --bg: #0b0f1a;
   --bg-end: #0f172a;
   --card: rgba(255, 255, 255, 0.04);
@@ -14,6 +33,10 @@
   --text-muted: #9ca3af;
   --scrollbar-thumb: #374151;
   --scrollbar-track: #0b0f1a;
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --editor-bg: #1a1e29;
+  --hero-vignette: rgba(11, 15, 26, 0.6);
 }
 
 html {
@@ -27,17 +50,20 @@ body {
   background: linear-gradient(180deg, var(--bg) 0%, var(--bg-end) 100%);
   background-attachment: fixed;
   color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Glassmorphism – card with blur */
 .glass {
-  @apply border border-white/[0.08] backdrop-blur-xl;
-  background: rgba(255, 255, 255, 0.04);
+  @apply backdrop-blur-xl transition-all duration-300;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
 }
 
 .glass-card {
-  @apply rounded-2xl border border-white/[0.08] backdrop-blur-xl;
-  background: rgba(255, 255, 255, 0.04);
+  @apply rounded-2xl backdrop-blur-xl transition-all duration-300;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
 }
 
 /* Button glow (primary indigo) */

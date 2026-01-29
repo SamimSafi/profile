@@ -35,7 +35,7 @@ export function Skills() {
               className="group relative flex flex-col items-center"
             >
               {/* Tile Container - Matching image style */}
-              <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl border border-white/10 bg-[#161b22] p-4 shadow-2xl transition-all group-hover:border-[var(--primary)]/50 group-hover:bg-[#1c2128] md:h-24 md:w-24">
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl border border-[var(--glass-border)] bg-[var(--bg-end)] p-4 shadow-2xl transition-all group-hover:border-[var(--primary)]/50 group-hover:bg-[var(--bg)] md:h-24 md:w-24">
                 <SkillIcon
                   name={skill.name}
                   className="h-10 w-10 transition-transform group-hover:scale-110 md:h-12 md:w-12"
@@ -43,7 +43,7 @@ export function Skills() {
                 />
 
                 {/* Subtle Inner Glow */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[var(--text)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
 
               <span className="mt-3 text-[10px] font-medium uppercase tracking-wider text-[var(--text-muted)] transition-colors group-hover:text-[var(--text)] md:text-xs">
@@ -71,7 +71,7 @@ export function Skills() {
             <div className="absolute top-0 right-0 -mr-4 -mt-4 h-24 w-24 rounded-full bg-[var(--primary)]/5 blur-2xl group-hover:bg-[var(--primary)]/10 transition-colors" />
 
             <div className="mb-4 flex items-center gap-3 relative z-10">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:border-[var(--accent)]/30 transition-colors">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--text)]/5 border border-[var(--glass-border)] group-hover:border-[var(--accent)]/30 transition-colors">
                 {iconMap[group.icon] || <IconTool size={22} className="text-[var(--accent)]" />}
               </div>
               <div>
@@ -89,7 +89,7 @@ export function Skills() {
                     <span className="font-medium text-[var(--text)]">{skill.name}</span>
                     <span className="font-mono text-[var(--text-muted)]">{skill.level}%</span>
                   </div>
-                  <div className="h-1.5 w-full overflow-hidden rounded-full bg-white/5 border border-white/5">
+                  <div className="h-1.5 w-full overflow-hidden rounded-full bg-[var(--text)]/5 border border-[var(--text)]/5">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}

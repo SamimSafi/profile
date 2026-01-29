@@ -49,7 +49,7 @@ export function About() {
                   background: `linear-gradient(135deg, var(--primary) 0%, var(--accent) 50%, var(--highlight) 100%)`,
                 }}
               />
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl">
+              <div className="relative overflow-hidden rounded-[2rem] border border-[var(--glass-border)] shadow-2xl">
                 <img src={profileImg} alt="" className="h-64 w-64 object-cover sm:h-72 sm:w-72" />
               </div>
             </div>
@@ -57,7 +57,7 @@ export function About() {
         </div>
 
         {/* Tech stack at the end */}
-        <div className="mt-12 flex flex-wrap gap-2 border-t border-white/5 pt-8">
+        <div className="mt-12 flex flex-wrap gap-2 border-t border-[var(--glass-border)] pt-8">
           {about.techStack
             .filter((t) => !['React', 'TypeScript'].includes(t))
             .map((t, i) => (
@@ -67,7 +67,7 @@ export function About() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.25, delay: i * 0.03 }}
-                className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-[var(--text)]"
+                className="rounded-lg border border-[var(--glass-border)] bg-[var(--text)]/[0.03] px-3 py-2 text-sm text-[var(--text)]"
               >
                 {t}
               </motion.span>

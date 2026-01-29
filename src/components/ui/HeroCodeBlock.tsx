@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 type Run = 'build_dashboard' | 'fetch_surveys' | null
 
-const EDITOR_BG = '#1a1e29'
+const EDITOR_BG = 'var(--editor-bg)'
 const DOT_RED = '#ff5f56'
 const DOT_ORANGE = '#ffbd2e'
 const DOT_GREEN = '#27c93f'
-const KEYWORD = '#22d3ee'
-const TEXT = '#e5e7eb'
+const KEYWORD = 'var(--accent)'
+const TEXT = 'var(--text)'
 
 const LINES = [
   { id: 'l1', fn: 'build_dashboard' as const, raw: 'def build_dashboard(data):' },

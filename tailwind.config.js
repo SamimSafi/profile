@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -9,13 +10,13 @@ export default {
         heading: ['Plus Jakarta Sans', 'Space Grotesk', 'Inter', 'sans-serif'],
       },
       colors: {
-        bg: '#0b0f1a',
-        'bg-end': '#0f172a',
-        primary: '#6366f1',
-        accent: '#22d3ee',
-        highlight: '#a855f7',
-        'text-main': '#e5e7eb',
-        'text-muted': '#9ca3af',
+        bg: 'var(--bg)',
+        'bg-end': 'var(--bg-end)',
+        primary: 'var(--primary)',
+        accent: 'var(--accent)',
+        highlight: 'var(--highlight)',
+        'text-main': 'var(--text)',
+        'text-muted': 'var(--text-muted)',
       },
       letterSpacing: { tight: '-0.02em' },
       lineHeight: { tight: '1.2' },
