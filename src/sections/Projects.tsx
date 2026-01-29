@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { IconExternalLink, IconGithub, IconChevronLeft, IconChevronRight } from '@/components/ui/Icons'
 import { Section } from '@/components/animation/Section'
-import { projects, Project } from '@/data/projects'
+import { projects } from '@/data/projects'
 
 function ImageGallery({ images, title }: { images: string[], title: string }) {
   const [currentIndex, setCurrentIndex] = useState(0)
