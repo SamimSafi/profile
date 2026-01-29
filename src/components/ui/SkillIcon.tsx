@@ -48,24 +48,14 @@ export function SkillIcon({ name, size = 32, className = '' }: { name: string } 
         alt={name} 
         width={size} 
         height={size} 
-        className={`object-contain ${className}`} 
+        className={`object-contain transition-transform group-hover:scale-110 ${className}`} 
+        onError={(e) => {
+          // If image fails to load, hide it
+          e.currentTarget.style.display = 'none'
+        }}
       />
     )
   }
 
-  const path = iconPaths[name]
-  if (!path) return null
-
-  return (
-    <svg 
-      width={size} 
-      height={size} 
-      viewBox="0 0 24 24" 
-      fill="currentColor" 
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d={path} />
-    </svg>
-  )
+  return null
 }

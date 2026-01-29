@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { IconMenu, IconX } from '@/components/ui/Icons'
 import { site } from '@/data/site'
+import logo from '@/assets/samimsafi.png'
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -34,8 +35,9 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
-        <a href="#home" className="font-heading text-lg font-semibold text-[var(--text)]">
-          {site.name}
+        <a href="#home" className="flex items-center gap-2 font-heading text-lg font-semibold text-[var(--text)]">
+          <img src={logo} alt="Logo" className="h-8 w-8 rounded-full object-cover" />
+          <span>{site.name}</span>
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
