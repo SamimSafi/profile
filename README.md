@@ -14,24 +14,32 @@ Fast, clean, SEO-ready portfolio built with **React + Vite**, **TypeScript**, **
 
 ```
 src/
-├── assets/          # images, icons
+├── assets/          # images, icons, profile photos
 ├── components/
-│   ├── ui/          # buttons, cards
-│   ├── layout/      # navbar, footer
-│   └── animation/   # motion wrappers
-├── sections/        # hero, skills, projects, experience, contact
-├── data/            # content (no hardcoded text in UI)
-│   ├── skills.ts
-│   ├── projects.ts
-│   └── socials.ts
-├── hooks/
-├── pages/
-│   └── Home.tsx
-├── styles/
-│   └── globals.css
-├── utils/
-└── main.tsx
+│   ├── ui/          # atomic components (buttons, cards)
+│   ├── layout/      # layout components (navbar, footer)
+│   └── animation/   # Framer Motion wrappers
+├── sections/        # page sections (Hero, About, Skills, etc.)
+├── data/            # application content & configuration
+├── hooks/           # custom React hooks
+├── pages/           # page components
+├── styles/          # global styles & Tailwind config
+├── utils/           # utility functions
+└── main.tsx         # application entry point
 ```
+
+## Theming
+
+Custom theme defined in `tailwind.config.js`:
+
+- **Colors**:
+  - `primary`: `#6366f1` (Indigo)
+  - `accent`: `#22d3ee` (Cyan)
+  - `highlight`: `#a855f7` (Purple)
+  - `bg`: `#0b0f1a` (Dark Navy)
+- **Fonts**:
+  - `display`/`heading`: `Plus Jakarta Sans`, `Space Grotesk`
+  - `sans`: `Inter`
 
 ## Setup
 
@@ -61,9 +69,14 @@ src/
 
 ## Data & content
 
+- **Site Config**: `src/data/site.ts`
+- **About**: `src/data/about.ts`
 - **Skills**: `src/data/skills.ts`
 - **Projects**: `src/data/projects.ts`
+- **Experience**: `src/data/experience.ts`
+- **Showcase**: `src/data/showcase.ts`
 - **Social links**: `src/data/socials.ts`
+- **Contact**: `src/data/contact.ts`
 
 Keep all copy and list data here; components should import from `data/` and stay free of hardcoded text.
 

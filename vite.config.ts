@@ -15,6 +15,9 @@ const base =
 export default defineConfig({
   base,
   plugins: [react()],
+  server: {
+    host: true,
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

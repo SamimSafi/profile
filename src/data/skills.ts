@@ -1,39 +1,71 @@
+export type SkillItem = {
+  name: string
+  icon?: string
+}
+
+export const techSkills: SkillItem[] = [
+  { name: 'PHP' },
+  { name: 'Node.js' },
+  { name: 'JavaScript' },
+  { name: 'React JS' },
+  { name: 'MySQL' },
+  { name: 'Python' },
+  { name: 'FastAPI' },
+  { name: 'Flutter' },
+  { name: 'SQL Server' },
+  { name: 'SQLite' },
+  { name: '.NET Core' },
+  { name: 'Express.js' },
+  { name: 'React Native' },
+  { name: 'TypeScript' },
+  { name: 'Laravel' },
+]
+
 export type SkillGroup = {
   category: string
   icon: string
   description: string
-  items: string[]
+  items: { name: string; level: number }[]
 }
 
 export const skillGroups: SkillGroup[] = [
   {
-    category: 'Frontend',
+    category: 'Full Stack Development',
     icon: 'FiLayout',
-    description: 'Modern UI with React, TypeScript, and responsive design.',
-    items: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Framer Motion'],
+    description: 'Modern web applications and system design.',
+    items: [
+      { name: 'System Architecture', level: 95 },
+      { name: 'API Design & Integration', level: 92 },
+      { name: 'Scalable Systems', level: 90 },
+      { name: 'Security Best Practices', level: 94 },
+      { name: 'ERP & MIS Solutions', level: 96 },
+      { name: 'Version Control (Git)', level: 90 },
+    ],
   },
   {
-    category: 'Backend',
+    category: 'Frontend & UI',
+    icon: 'FiBox',
+    description: 'Responsive and interactive interfaces.',
+    items: [
+      { name: 'Responsive Design', level: 95 },
+      { name: 'UX/UI Design Principles', level: 88 },
+      { name: 'Performance Optimization', level: 92 },
+      { name: 'State Management', level: 90 },
+      { name: 'Accessibility (A11y)', level: 85 },
+      { name: 'Cross-browser Compatibility', level: 94 },
+    ],
+  },
+  {
+    category: 'Databases & Backend',
     icon: 'FiServer',
-    description: 'APIs, data pipelines, and async workers.',
-    items: ['FastAPI', 'Python', 'PostgreSQL', 'Celery', 'ETL', 'REST APIs'],
-  },
-  {
-    category: 'Data & Analytics',
-    icon: 'FiBarChart2',
-    description: 'Dashboards, metrics, and time-series analysis.',
-    items: ['ApexCharts', 'Kobo', 'Pandas', 'Dashboard & Visualization', 'Time Series'],
-  },
-  {
-    category: 'Mapping & Visualization',
-    icon: 'FiMap',
-    description: 'Maps, GIS, and spatial data.',
-    items: ['Leaflet', 'GPS', 'GeoJSON', 'ODK', 'Spatial analysis'],
-  },
-  {
-    category: 'Tools & DevOps',
-    icon: 'FiTool',
-    description: 'Containers, CI/CD, and tooling.',
-    items: ['Docker', 'Linux', 'CI/CD', 'Nginx', 'Git', 'MEAL / M&E'],
+    description: 'Data management and server-side logic.',
+    items: [
+      { name: 'Database Normalization', level: 95 },
+      { name: 'Query Optimization', level: 92 },
+      { name: 'RESTful API Development', level: 94 },
+      { name: 'Authentication & JWT', level: 90 },
+      { name: 'Data Modeling', level: 95 },
+      { name: 'Server Administration', level: 85 },
+    ],
   },
 ]

@@ -1,8 +1,8 @@
 export const site = {
-  name: 'Samim Safi',
-  roleBadge: 'Full Stack Developer',
-  tagline: 'Full-Stack Software Engineer',
+  name: 'Mohammad Samim Safi',
+  roleBadge: 'Senior Software & MIS Developer',
+  tagline: 'Senior Software & MIS Developer',
   heroSentence:
-    'I design high-performance data platforms, survey systems, and real-time dashboards.',
+    'I design high-performance ERP systems, financial platforms, and real-time MIS solutions.',
   cvUrl: '/cv.pdf',
 } as const
