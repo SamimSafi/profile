@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 // Local dev: base stays '/' so it works at http://localhost:5173/
 const base =
   process.env.BASE_PATH ||
-  (process.env.NODE_ENV === 'production' ? '/portfolio/' : '/')
+  (process.env.NODE_ENV === 'production' ? '/profile/' : '/')
 
 export default defineConfig({
   base,
